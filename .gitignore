@@ -18,4 +18,4 @@
 *.rar
 /.metadata/
 .recommenders
-RemoteSystemsTempFiles
+/RemoteSystemsTempFiles/

@@ -11,4 +11,10 @@ public class BaseballCoach implements Coach {
 		return "Jump 2 mins";
 	}
 
+	@Override
+	public String getDailyFortuen() {
+		
+		return "You are Lucky";
+	}
+
 }

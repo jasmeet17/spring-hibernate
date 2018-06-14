@@ -8,6 +8,7 @@ public class TennisCoach implements Coach {
 	
 	private FortuneService fortuneServices;
 	
+	// Constructor Injection
 	@Autowired
 	public TennisCoach(FortuneService fortuneServices) {
 		this.fortuneServices = fortuneServices;

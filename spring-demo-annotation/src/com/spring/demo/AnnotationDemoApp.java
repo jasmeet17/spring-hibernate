@@ -20,6 +20,10 @@ public class AnnotationDemoApp {
 		//call method to get daily fortune
 		System.out.println("TableTennis Fortune: " + theCoach.getDailyFortuen());
 		
+		//call method to get daily fortune on Baseball coach
+		System.out.println("Baseball Fortune: " + theBaseballCoach.getDailyFortuen());
+				
+		
 		//close the context
 		context.close();
 	}

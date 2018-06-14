@@ -1,9 +1,22 @@
 package com.spring.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BaseballCoach implements Coach {
+	
+	private FortuneService fortuneService;
+	
+	public FortuneService getFortuneService() {
+		return fortuneService;
+	}
+
+	//Setter Dependency Injection
+	@Autowired
+	public void setFortuneService(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
 
 	@Override
 	public String getDailyWorkout() {
@@ -14,7 +27,7 @@ public class BaseballCoach implements Coach {
 	@Override
 	public String getDailyFortuen() {
 		
-		return "You are Lucky";
+		return this.fortuneService.getFortune();
 	}
 
 }

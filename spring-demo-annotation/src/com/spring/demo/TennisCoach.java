@@ -2,6 +2,7 @@ package com.spring.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("thatSillyCoach")
@@ -10,6 +11,9 @@ public class TennisCoach implements Coach {
 	@Autowired
 	@Qualifier("randomFortuneService")
 	private FortuneService fortuneServices;
+	
+	@Value("${foo.team}")
+	private String team;
 	
 	// Constructor Injection
 	/*
@@ -27,6 +31,10 @@ public class TennisCoach implements Coach {
 	}
 	*/
 
+	public String getTeam() {
+		return team;
+	}
+
 	@Override
 	public String getDailyWorkout() {
 		return fortuneServices.getFortune();
@@ -37,4 +45,5 @@ public class TennisCoach implements Coach {
 		return this.fortuneServices.getFortune();
 	}
 
+	
 }

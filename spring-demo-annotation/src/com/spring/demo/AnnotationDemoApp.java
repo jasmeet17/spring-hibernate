@@ -10,7 +10,7 @@ public class AnnotationDemoApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//get the bean from spring container
-		Coach theCoach = context.getBean("thatSillyCoach", Coach.class);
+		TennisCoach theCoach = context.getBean("thatSillyCoach", TennisCoach.class);
 		Coach theBaseballCoach = context.getBean("baseballCoach", Coach.class);
 		
 		//call a method from the bean
@@ -22,6 +22,9 @@ public class AnnotationDemoApp {
 		
 		//call method to get daily fortune on Baseball coach
 		System.out.println("Baseball Fortune: " + theBaseballCoach.getDailyFortuen());
+		
+		//demo inject properties file using Java annotations
+		System.out.println("Tennis team name :" + theCoach.getTeam());
 				
 		
 		//close the context

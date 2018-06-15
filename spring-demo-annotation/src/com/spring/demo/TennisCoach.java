@@ -3,9 +3,11 @@ package com.spring.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("thatSillyCoach")
+@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	@Autowired

@@ -1,5 +1,8 @@
 package com.spring.demo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,7 +10,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("thatSillyCoach")
-@Scope("prototype")
+//@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	@Autowired
@@ -45,6 +48,16 @@ public class TennisCoach implements Coach {
 	@Override
 	public String getDailyFortuen() {
 		return this.fortuneServices.getFortune();
+	}
+	
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println("Start up method");
+	}
+
+	@PreDestroy
+	public void doEndingStuff() {
+		System.out.println("End up method");
 	}
 
 	

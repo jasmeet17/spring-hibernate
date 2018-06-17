@@ -6,5 +6,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("com.spring.demo")
 public class SportConfig {
+	
+	
 
 }

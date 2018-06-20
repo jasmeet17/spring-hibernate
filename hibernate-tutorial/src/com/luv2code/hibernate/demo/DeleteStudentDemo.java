@@ -33,7 +33,10 @@ public class DeleteStudentDemo {
 			
 			//Delete the student object
 			System.out.println("Delete . . .");
-			session.delete(myStudent);
+//			session.delete(myStudent);
+			
+			// another approach using HQL
+			session.createQuery("delete from Student where id=2").executeUpdate();
 			
 			//commit transaction
 			System.out.println("Commit Transaction");
